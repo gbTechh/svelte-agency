@@ -2,8 +2,8 @@
   import "../app.css";
 </script>
 
-<div class="p-2 md:px-4">
-  <nav class="rounded-full text-white">
+<div class="py-2 md:py-3">
+  <nav class="rounded-full text-white ">
     <a href="/">Logo</a>
     <div class="md:flex justify-center gap-4 items-center w-full absolute md:relative hidden">
       <a href="/servicios">Servicios</a>
@@ -15,7 +15,7 @@
     <button></button>
   </nav>
   
-  <main>
+  <main >
     <slot />
   </main>
 </div>

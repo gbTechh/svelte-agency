@@ -16,7 +16,7 @@ import Badge from "$lib/components/ui/Badge.svelte";
   ]
 </script>
 
-<header class="flex flex-col justify-center items-center">
+<header class="p-2 md:px-4 flex flex-col justify-center items-center">
   <Spacer y={10}/>
   <Badge cls="max-w-[200px] mx-auto">Lo que dicen de nosotros</Badge>
   <Spacer y={4}/>  
@@ -30,7 +30,7 @@ import Badge from "$lib/components/ui/Badge.svelte";
   <Text as="a" href="/" color="black" cls="bg-primary rounded-full p-2 px-4">Quiero mi web ahora</Text>
 </header>
 <Spacer y={16}/>
-<section class="w-full h-[100px] bg-body relative rounded-none ">
+<section class="p-0 md:px-4  w-full h-[100px] bg-body relative rounded-none ">
   <div class="shadow h-[300px]"></div>
   <div class="relative z-10 block bg-body w-full min-h-[600px] ">
     <SliderCards items={array} />
