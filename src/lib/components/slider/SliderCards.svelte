@@ -49,7 +49,7 @@
 
 </script>
 
-<div class="w-full overflow-hidden -top-[4vw] absolute">
+<div class="w-full overflow-hidden -top-[4vw] relative">
   <div 
     bind:this={div} 
     class="w-full flex " 

@@ -17,7 +17,7 @@ import Badge from "$lib/components/ui/Badge.svelte";
 </script>
 
 <header class="p-2 md:px-4 flex flex-col justify-center items-center">
-  <Spacer y={10}/>
+  <Spacer y={8}/>
   <Badge cls="max-w-[200px] mx-auto">Lo que dicen de nosotros</Badge>
   <Spacer y={4}/>  
   <Text as="h1" size="big" cls=" max-w-[1000px] mx-auto w-full text-center" type="title">
@@ -29,12 +29,28 @@ import Badge from "$lib/components/ui/Badge.svelte";
   <Spacer y={6}/>
   <Text as="a" href="/" color="black" cls="bg-primary rounded-full p-2 px-4">Quiero mi web ahora</Text>
 </header>
-<Spacer y={16}/>
+<div class="my-24 lg:mt-52"></div>
 <section class="p-0 md:px-4  w-full h-[100px] bg-body relative rounded-none ">
   <div class="shadow h-[300px]"></div>
-  <div class="relative z-10 block bg-body w-full min-h-[600px] ">
+  <div class="relative z-10 block bg-body w-full min-h-[200px] ">
     <SliderCards items={array} />
+    <div class=" mt-[40px]  z-50 relative p-2 ">
+      <Text as="h1" size={`2xl`} cls=" max-w-[1000px] mx-auto w-full text-center" type="title">
+        ¿Cómo podemos ayudarte?</Text>
+      <Spacer y={4}/>
+      <Text color="contrast" cls="w-full text-center max-w-[700px] mx-auto">
+          Donec enim urna, venenatis vitae felis non, tempor sagittis ligula. Fusce lobortis elit leo, ac lacinia orci euismod et. Pellentesque at sem lacus.
+      </Text>
+      <Spacer y={8}/>
+      <div class="flex gap-2 justify-between items-center ">
+        <div class="aspect-[2/3.2] w-full h-auto bg-card border-border border-[1px] rounded-2xl">asds</div>
+        <div class="aspect-[2/3.2] w-full h-auto bg-card border-border border-[1px] rounded-2xl">asds</div>
+        <div class="aspect-[2/3.2] w-full h-auto bg-card border-border border-[1px] rounded-2xl">asds</div>
+        <div class="aspect-[2/3.2] w-full h-auto bg-card border-border border-[1px] rounded-2xl">asds</div>
+      </div>
+    </div>
   </div>
+ 
 </section>
 
 
