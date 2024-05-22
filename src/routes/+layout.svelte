@@ -1,53 +1,35 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+  import "../app.css";
 </script>
 
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+<div class="p-2 md:px-4">
+  <nav class="rounded-full text-white">
+    <a href="/">Logo</a>
+    <div class="md:flex justify-center gap-4 items-center w-full absolute md:relative hidden">
+      <a href="/servicios">Servicios</a>
+      <a href="/about">Proyectos</a>
+      <a href="/noostros">Nosotros</a>
+      <a href="/blog">Blog</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+    <button></button>
+  </nav>
+  
+  <main>
+    <slot />
+  </main>
 </div>
 
+
+
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+  nav {
+    @apply border-[1px] border-border max-w-[1200px] mx-auto p-1 px-3 bg-navbar flex justify-between items-center;
+  }
+  button {
+    @apply rounded-full bg-primary p-2 px-4 min-w-32 min-h-8
+  }
+  a {
+    @apply text-sm text-text
+  }
 </style>
