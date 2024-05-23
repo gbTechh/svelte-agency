@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+  import CardListing from "$lib/components/cards/CardListing.svelte";
   import SliderCards from "$lib/components/slider/SliderCards.svelte";
-import Badge from "$lib/components/ui/Badge.svelte";
+  import Badge from "$lib/components/ui/Badge.svelte";
   import Spacer from "$lib/components/ui/Spacer.svelte";
   import Text from "$lib/components/ui/Text.svelte";
+  import { data } from "$lib/data";
 
   let array = [
     {id: 1, name: 'web1', image: '/images/card1.png'},
@@ -14,6 +16,8 @@ import Badge from "$lib/components/ui/Badge.svelte";
     {id: 7, name: 'web7', image: '/images/card1.png'},
 
   ]
+
+  const { pages: {home: {services: {cards}}} } = data
 </script>
 
 <header class="p-2 md:px-4 flex flex-col justify-center items-center">
@@ -42,44 +46,11 @@ import Badge from "$lib/components/ui/Badge.svelte";
           Donec enim urna, venenatis vitae felis non, tempor sagittis ligula. Fusce lobortis elit leo, ac lacinia orci euismod et. Pellentesque at sem lacus.
       </Text>
       <Spacer y={8}/>
-      <div class="grid grid-cols-2 md:grid-cols-4 justify-between items-center gap-1 sm:gap-2">
-        <div class="card aspect-[2/3.2] w-full h-auto bg-card border-border border-[0px] overflow-hidden rounded-2xl">
-          <div class="card-btns p-2">
-            <a href="/" class="flex w-full items-center justify-center">
-              <Text as="span" size="custom" cls="text-[11px] text-center sm:text-base block w-ful text-center" color="contrast">Web design</Text>              
-            </a>
-            <div class="circle-shadow-l"></div>
-            <div class="circle-shadow-r"></div>
-          </div>
-        </div>
-        <div class="card aspect-[2/3.2] w-full h-auto bg-card border-border border-[0px] overflow-hidden rounded-2xl">
-          <div class="card-btns p-2">
-            <a href="/" class="flex w-full items-center justify-center">
-              <Text as="span" size="custom" cls="text-[11px] text-center sm:text-base block w-ful text-center" color="contrast">Web design</Text>              
-            </a>
-            <div class="circle-shadow-l"></div>
-            <div class="circle-shadow-r"></div>
-          </div>
-        </div>
-        <div class="card aspect-[2/3.2] w-full h-auto bg-card border-border border-[0px] overflow-hidden rounded-2xl">
-          <div class="card-btns p-2">
-            <a href="/" class="flex w-full items-center justify-center">
-              <Text as="span" size="custom" cls="text-[11px] text-center sm:text-base block w-ful text-center" color="contrast">Ecommerce</Text>              
-            </a>
-            <div class="circle-shadow-l"></div>
-            <div class="circle-shadow-r"></div>
-          </div>
-        </div>
-        <div class="card aspect-[2/3.2] w-full h-auto bg-card border-border border-[0px] overflow-hidden rounded-2xl">
-          <div class="card-btns p-2">
-            <a href="/" class="flex w-full items-center justify-center">
-              <Text as="span" size="custom" cls="text-[11px] text-center sm:text-base block w-ful text-center" color="contrast">Web design</Text>              
-            </a>
-            <div class="circle-shadow-l"></div>
-            <div class="circle-shadow-r"></div>
-          </div>
-        </div>
-        
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-8 h-auto">
+        {#each cards as {button, linkButton, listing, text, title, type} }
+          <CardListing type={type} {button} {linkButton} {listing} {text} {title}/>
+        {/each}
+       
       </div>
     </div>
   </div>
@@ -104,64 +75,6 @@ import Badge from "$lib/components/ui/Badge.svelte";
     -webkit-box-shadow: -3px -36px 0px -22px rgba(250,130,43,1);
     -moz-box-shadow: -3px -36px 0px -22px rgba(250,130,43,1); */
   }
-  .card {
-    position: relative;
-    box-shadow: 0px 0px 0px 1px rgb(40, 40, 40) inset;
-  }
-  .card:hover .card-btns{
-    opacity: 1;
-    box-shadow: 0px 0px 0px 1px rgb(40, 40, 40);
 
-    
-  }
-  .card-btns{
-    transition: 0.2s all ease;
-    opacity: 0;
-    top: 0;
-    right: 0;
-    @apply bg-body rounded-bl-2xl;
-    width: 60%;
-    height: 40px;
-    position: relative;
-    float: right;
-  }
-  .circle-shadow-l{
-    width: 20px;
-    height: 20px;
-    border-radius: 0 50% 0 0 ;
-    position: absolute;
-    left: -20px;
-    top: 0px;
-    background-color: transparent;
-    border-right: 1px solid rgb(40, 40,40);
-
-  }
-  .circle-shadow-l::before{
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 50% 0 0;
-    box-shadow: 3px -5px 0px 0px rgb(14,15,17);
-  }
-  .circle-shadow-r{
-    width: 20px;
-    height: 20px;
-    border-radius: 0 50% 0 0 ;
-    position: absolute;
-    right: 0px;
-    bottom: -20px;
-    background-color: transparent;
-  }
-  .circle-shadow-r::after{
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 50% 0 0;
-    box-shadow: 3px -5px 0px 0px rgb(14,15,17);
-    right: 0;
-    border-top: 1px solid rgba(40,40,40);
-
-  }
+  
 </style>

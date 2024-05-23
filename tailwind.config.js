@@ -22,10 +22,12 @@ export default {
         "twhite": "#f6f6f6",
         "tblack": "#0E0F11",
         "tcontrast": "#C8C8C8",
+        "tcontrasthard": "#767676",
         "card": "#161616"
       },
       fontFamily: {
         "marcellus": '"Marcellus", serif',
+        "manjari": '"Manjari", sans-serif',
       }
     },
   },

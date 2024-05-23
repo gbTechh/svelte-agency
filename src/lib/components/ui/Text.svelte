@@ -5,16 +5,18 @@
   export let size = 'md';
   export let cls = '';
   export let href = '/';
+  export let bg = '';
 
   // Función para generar las cls CSS
   $: clases = [
-
+      bg,
       cls,
       type === 'title' ? 'font-marcellus' : '',
-      type === 'base' ? 'font-biryani' : '',
+      type === 'base' ? 'font-manjari' : '',
       color === 'primary' ? 'text-text' : '',
       color === 'white' ? 'text-twhite' : '',
       color === 'contrast' ? 'text-tcontrast' : '',
+      color === 'contrasthard' ? 'text-tcontrasthard' : '',
       color === 'error' ? 'text-red-500' : '',
       color === 'black' ? 'tblack' : '',
       color === 'success' ? 'text-green-400' : '',
@@ -23,7 +25,8 @@
       size === '2xl' ? 'text-xl md:text-3xl' : '',
       size === 'xl' ? 'text-xl md:text-2xl' : '',
       size === 'lg' ? 'text-lg md:text-lg' : '',
-      size === 'md' ? 'text-base md:text-md' : '',
+      size === 'md' ? 'text-base md:text-[1.1rem]' : '',
+      size === 'xmd' ? 'text-[0.80rem] md:text-[1rem]' : '',
       size === 'sm' ? 'text-sm md:text-sm' : '',
       size === '14' ? 'text-[12px] md:text-[14px]' : '',
       size === 'xs' ? 'text-xs md:text-xs' : '',
